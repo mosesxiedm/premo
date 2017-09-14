@@ -1,11 +1,15 @@
 <?php
+namespace DM\MovieApp\Controllers;
+use DM\MovieApp\Services\MovieAPI;
 
-use Phalcon\Mvc\Controller;
 
-class IndexController extends Controller
+class IndexController 
 {
     public function indexAction()
     {
+
+    	$movieAPI = new MovieAPI();
+    	return $movieAPI->fetchMovies();
 
     }
 }

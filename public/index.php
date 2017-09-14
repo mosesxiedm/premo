@@ -1,5 +1,7 @@
 <?php
-
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 use Phalcon\Loader;
 use Phalcon\Mvc\View;
 use Phalcon\Mvc\Application;
@@ -16,8 +18,8 @@ $loader = new Loader();
 
 $loader->registerDirs(
     [
-        "../app/controllers/",
-        "../app/models/",
+        "../app/Controllers/",
+        "../app/Models/",
     ]
 );
 
@@ -55,11 +57,31 @@ $di->set(
     }
 );
 
-$router = $di->getShared('router');
+//Setup a base URI so that all generated URIs include the "tutorial" folder
+$di->set('url', function(){
+    $url = new \Phalcon\Mvc\Url();
+    $url->setBaseUri('/premo/');
+    return $url;
+});
 
+// Create the router
+$router = new \Phalcon\Mvc\Router();
 $router->setUriSource(
     Router::URI_SOURCE_SERVER_REQUEST_URI
 );
+
+$router->add(
+    "/",
+    [
+        "controller" => "index",
+        "action"     => "index",
+    ]
+);
+$router->handle();
+
+// $di->set('router', function() use ($router) {
+//     return $router;
+// });
 
 $application = new Application($di);
 
@@ -69,5 +91,8 @@ try {
 
     $response->send();
 } catch (\Exception $e) {
+
     echo "Exception: ", $e->getMessage();
+    echo '<pre>';
+    var_dump($e->getTraceAsString());
 }

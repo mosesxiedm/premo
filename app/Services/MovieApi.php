@@ -63,13 +63,8 @@ class MovieApi
 
 			}
 
-
 		}
 
 		return $list_of_movies;
-
 	}
-
-
-
 }
