@@ -5,6 +5,7 @@ use Phalcon\Mvc\Model;
 
 class Movie extends Model
 {
+
 	public $title;
 	public $rating;
 	public $release_data;
@@ -29,4 +30,10 @@ class Movie extends Model
 	{
 		return $this->overview;
 	}
+
+	    public function initialize()
+    {
+        $this->setSource("movie");
+    }
+
 }

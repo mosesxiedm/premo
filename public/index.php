@@ -57,10 +57,10 @@ $di->set(
     function () {
         return new DbAdapter(
             [
-                "host"     => "localhost",
-                "username" => "root",
-                "password" => "secret",
-                "dbname"   => "test_db",
+                "host"     => "mysql",
+                "username" => "premo",
+                "password" => "premo",
+                "dbname"   => "premo",
             ]
         );
     }
@@ -97,6 +97,7 @@ $router->add(
     "/",
     [
         "controller" => "index",
+
         "action"     => "index",
     ]
 );
