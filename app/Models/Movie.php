@@ -5,14 +5,14 @@ use Phalcon\Mvc\Model;
 
 class Movie extends Model
 {
-	public $name;
+	public $title;
 	public $rating;
 	public $release_data;
 	public $overview;
 
 	public function getName()
 	{
-		return $this->name;
+		return $this->title;
 	}
 
 	public function getRating()
