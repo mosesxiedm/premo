@@ -9,23 +9,32 @@ use Phalcon\Di\FactoryDefault;
 use Phalcon\Mvc\Url as UrlProvider;
 use Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;
 use Phalcon\Mvc\Router;
-
+use Phalcon\Mvc\Dispatcher;
 
 
 
 // Register an autoloader
 $loader = new Loader();
 
-$loader->registerDirs(
+// $loader->registerDirs(
+//     [
+//         "../app/Controllers/",
+//         "../app/Models/",
+//     ]
+// );
+
+
+$loader->registerNamespaces(
     [
-        "../app/Controllers/",
-        "../app/Models/",
+       'DM\MovieApp\Controllers' => '../app/Controllers',
+       'DM\MovieApp\Model' => '../app/Models',
+       'DM\MovieApp\Services' => '../app/Services',
     ]
 );
 
 $loader->register();
 
-
+// require './vendor/autoloader.php';
 
 // Create a DI
 $di = new FactoryDefault();
@@ -63,6 +72,20 @@ $di->set('url', function(){
     $url->setBaseUri('/premo/');
     return $url;
 });
+
+
+
+// Registering a dispatcher
+$di->set('dispatcher',function () {
+        $dispatcher = new Dispatcher();
+
+        $dispatcher->setDefaultNamespace(
+            'DM\MovieApp\Controllers'
+        );
+
+        return $dispatcher;
+    }
+);
 
 // Create the router
 $router = new \Phalcon\Mvc\Router();

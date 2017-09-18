@@ -3,7 +3,7 @@ namespace DM\MovieApp\Model;
 
 use Phalcon\Mvc\Model;
 
-class Movie
+class Movie extends Model
 {
 	public $name;
 	public $rating;

@@ -8,5 +8,4 @@ describe(MovieApi::class, function () {
 			expect(count($indexController_instance->indexAction()))->toBeGreaterThan(0);
 		});
 	});
-
 });
