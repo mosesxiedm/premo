@@ -21,7 +21,7 @@ class IndexController extends Controller
 
     	$this->storeMovies($list_of_movies);
 
-    	$list_of_movies = $this->sort($sort_by);
+    	//$list_of_movies = $this->sort($sort_by);
 
     	for($i=0; $i<count($list_of_movies); $i++){
 

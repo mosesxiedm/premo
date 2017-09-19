@@ -101,6 +101,11 @@ $router->add(
         "action"     => "index",
     ]
 );
+
+$router->add(
+    "/info/{title}"
+);
+
 $router->handle();
 
 // $di->set('router', function() use ($router) {

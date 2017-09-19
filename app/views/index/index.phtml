@@ -7,9 +7,14 @@ echo PHP_EOL;
 echo PHP_EOL;
 
 
+
 for($i=0; $i<count($movies); $i++){
 
-	echo $movies[$i]->title;
+	echo $this->tag->linkTo(
+	"info",
+    $movies[$i]->title
+);
+
 	echo "<br/>";
 
 }
