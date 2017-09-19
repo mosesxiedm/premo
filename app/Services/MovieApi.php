@@ -48,53 +48,11 @@ class MovieApi
 		return $obj->results[$index]->overview;
 	}
 
-	public function sort($sort_method)
-	{
+	public function fixDate(){
 
-		if($sort_method ==  "rating"){
-			$filtered_movies = Movie::find(
-				[
-				"order" => "rating DESC, release_data"
-				]
-				);
-
-		} elseif ($sort_method == "alphabetical") {
-
-			$filtered_movies = Movie::find(
-				[
-				"order" => "title DESC, release_data"
-				]
-				);
-
-		} else{
-
-			$filtered_movies = Movie::find(
-				[
-				"order" => "release_data DESC"
-				]
-				);
-		}
-
-		return $filtered_movies;
-
-		/*
-
-		$raw_movies = $this->fetchMovies();
-
-		$list_of_movies = array();
-
-		for($i=0; $i<count($raw_movies); $i++){
-
-			if((($raw_movies[$i]->rating  == $rating) || ($raw_movies[$i]->rating  == 0)) && (($raw_movies[$i]->release_data  == $release_date) || ($raw_movies[$i]->release_data  == 0))){
-				
-				$list_of_movies[] = $raw_movies[$i];
-
-			}
-
-		}
-
-		return $list_of_movies;
-		*/
-	
+		
 	}
+
+
+
 }

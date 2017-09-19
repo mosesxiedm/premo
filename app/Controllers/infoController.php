@@ -6,10 +6,10 @@ use \Phalcon\Mvc\Controller;
 
 class InfoController extends Controller
 {
-    public function indexAction()
+    public function infoAction()
     {
-    	$robots = Robots::find("title = ");
-    	echo $robots->overview, "\n";
+
+    	
 
     }
 

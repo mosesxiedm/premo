@@ -69,7 +69,7 @@ $di->set(
 //Setup a base URI so that all generated URIs include the "tutorial" folder
 $di->set('url', function(){
     $url = new \Phalcon\Mvc\Url();
-    $url->setBaseUri('/premo/');
+    $url->setBaseUri('/');
     return $url;
 });
 
@@ -88,7 +88,8 @@ $di->set('dispatcher',function () {
 );
 
 // Create the router
-$router = new \Phalcon\Mvc\Router();
+$router = $di->get('router');
+
 $router->setUriSource(
     Router::URI_SOURCE_SERVER_REQUEST_URI
 );
@@ -103,17 +104,28 @@ $router->add(
 );
 
 $router->add(
-    "/info/{title}"
+    "/info",
+    [
+        "controller" => "info",
+
+        "action"     => "info",
+    ]
 );
+
+$router->add(
+    "/info/{title}",
+    [
+        "controller" => "info",
+        "action"     => "info",
+    ]
+);
+
+
 
 $router->handle();
 
-// $di->set('router', function() use ($router) {
-//     return $router;
-// });
 
 $application = new Application($di);
-
 try {
     // Handle the request
     $response = $application->handle();
