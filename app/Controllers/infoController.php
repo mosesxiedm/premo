@@ -8,19 +8,9 @@ class InfoController extends Controller
 {
     public function indexAction()
     {
-    	$list_of_movies = $this->getMoviesFromApi();
-    	
-    	for($i=0; $i<count($list_of_movies); $i++){
-
-    	$this->view->movies = $list_of_movies[0]->overview;
-
-    	}	
+    	$robots = Robots::find("title = ");
+    	echo $robots->overview, "\n";
 
     }
 
-    public function getMoviesFromApi()
-    {
-    	$movieAPI = new MovieAPI();
-    	return $movieAPI->fetchMovies();
-    }
 }

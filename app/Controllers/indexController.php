@@ -2,50 +2,57 @@
 namespace DM\MovieApp\Controllers;
 
 use DM\MovieApp\Services\MovieAPI;
+use DM\MovieApp\Model\Movie;
 use \Phalcon\Mvc\Controller;
 use Phalcon\Forms\Form;
 use Phalcon\Forms\Element\Text;
 use Phalcon\Forms\Element\Select;
 
+
 class IndexController extends Controller
 {
+
     public function indexAction()
     {
+
+    	$sort_by = $this->request->getQuery("sort");
+
     	$list_of_movies = $this->getMoviesFromApi();
 
     	$this->storeMovies($list_of_movies);
+
+    	$list_of_movies = $this->sort($sort_by);
 
     	for($i=0; $i<count($list_of_movies); $i++){
 
     	$this->view->movies = $list_of_movies;
 
-    	$form = new Form();
-
-$form->add(
-    new Text(
-        'name'
-    )
-);
-
-$form->add(
-    new Text(
-        'telephone'
-    )
-);
-
-$form->add(
-    new Select(
-        'telephoneType',
-        [
-            'H' => 'Home',
-            'C' => 'Cell',
-        ]
-    )
-);
-
     	}
 
     }
+
+	public function sort($sort_method)
+	{
+
+		if($sort_method ==  "rating"){
+
+			$filtered_movies = Movie::find(["order" => "rating DESC"]);
+
+		} elseif ($sort_method == "alphabetical") {
+
+			$filtered_movies = Movie::find([
+				"order" => "title ASC"]);
+
+		} else{
+
+			$filtered_movies = Movie::find([
+				"order" => "release_data ASC"]);
+		}
+
+		return $filtered_movies;
+	
+	}
+
 
     public function getMoviesFromApi()
     {

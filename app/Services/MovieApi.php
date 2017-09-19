@@ -30,7 +30,6 @@ class MovieApi
 
 			$list_of_movies[] = $movie;
 
-
 		}
 
 		return $list_of_movies;
@@ -49,8 +48,37 @@ class MovieApi
 		return $obj->results[$index]->overview;
 	}
 
-	public function filter($rating = 0, $release_date = 0)
+	public function sort($sort_method)
 	{
+
+		if($sort_method ==  "rating"){
+			$filtered_movies = Movie::find(
+				[
+				"order" => "rating DESC, release_data"
+				]
+				);
+
+		} elseif ($sort_method == "alphabetical") {
+
+			$filtered_movies = Movie::find(
+				[
+				"order" => "title DESC, release_data"
+				]
+				);
+
+		} else{
+
+			$filtered_movies = Movie::find(
+				[
+				"order" => "release_data DESC"
+				]
+				);
+		}
+
+		return $filtered_movies;
+
+		/*
+
 		$raw_movies = $this->fetchMovies();
 
 		$list_of_movies = array();
@@ -66,5 +94,7 @@ class MovieApi
 		}
 
 		return $list_of_movies;
+		*/
+	
 	}
 }
