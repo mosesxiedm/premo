@@ -4,9 +4,7 @@ namespace DM\MovieApp\Controllers;
 use DM\MovieApp\Services\MovieAPI;
 use DM\MovieApp\Model\Movie;
 use \Phalcon\Mvc\Controller;
-use Phalcon\Forms\Form;
-use Phalcon\Forms\Element\Text;
-use Phalcon\Forms\Element\Select;
+
 
 
 class IndexController extends Controller
