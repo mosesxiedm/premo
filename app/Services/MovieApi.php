@@ -31,14 +31,7 @@ class MovieApi
 			$movie->overview = $obj->results[$i]->overview;
 
 			$list_of_movies[] = $movie;
-
 		}
-
 		return $list_of_movies;
 	}
-
-
-
-
-
 }

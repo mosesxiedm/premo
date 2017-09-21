@@ -9,10 +9,8 @@ use \Phalcon\Mvc\Controller;
 
 class IndexController extends Controller
 {
-
     public function indexAction()
     {
-
     	$sort_by = $this->request->getQuery("sort");
 
     	$list_of_movies = $this->getMoviesFromApi();
@@ -24,14 +22,11 @@ class IndexController extends Controller
     	for($i=0; $i<count($list_of_movies); $i++){
 
     	$this->view->movies = $list_of_movies;
-
     	}
-
     }
 
 	public function sort($sort_method)
 	{
-
 		if($sort_method ==  "rating"){
 
 			$filtered_movies = Movie::find(["order" => "rating DESC"]);
@@ -48,9 +43,7 @@ class IndexController extends Controller
 		}
 
 		return $filtered_movies;
-	
 	}
-
 
     public function getMoviesFromApi()
     {
@@ -67,12 +60,6 @@ class IndexController extends Controller
             if(empty($movie)){
                 $list_of_movies[$i]->save();
             }
-
-		
-
 		}
-
     }
-   
-
 }

@@ -9,14 +9,11 @@ class InfoController extends Controller
 {
     public function infoAction($id)
     {
-
-
         $movie = Movie::findFirst($id);
 
         $this->view->title = $movie->title;
 
         $this->view->overview = $movie->overview;
-
     }
 
 }
