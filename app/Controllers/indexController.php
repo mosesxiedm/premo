@@ -62,7 +62,13 @@ class IndexController extends Controller
     {
     	for($i=0; $i<count($list_of_movies); $i++){
 
-		$list_of_movies[$i]->save();
+            $movie = Movie::findFirst($list_of_movies[$i]->id);
+
+            if(empty($movie)){
+                $list_of_movies[$i]->save();
+            }
+
+		
 
 		}
 

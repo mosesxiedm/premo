@@ -20,6 +20,8 @@ class MovieApi
 
 			$movie = new Movie;
 
+			$movie->id = $obj->results[$i]->id;
+
 			$movie->title = $obj->results[$i]->title;
 
 			$movie->rating = $obj->results[$i]->vote_average;

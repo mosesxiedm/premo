@@ -5,11 +5,16 @@ use Phalcon\Mvc\Model;
 
 class Movie extends Model
 {
-
+	public $id;
 	public $title;
 	public $rating;
 	public $release_data;
 	public $overview;
+
+	public function getId()
+	{
+		return $this->id;
+	}
 
 	public function getName()
 	{

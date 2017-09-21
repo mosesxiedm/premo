@@ -14,7 +14,7 @@ class InfoController extends Controller
     	$string_array = str_split($url);
     	$fixed_url = "";
 
-    	for($i=6; $i<strlen($url); $i++){
+    	for($i=6; $i<count($string_array); $i++){
 
     	}
 
