@@ -19,10 +19,7 @@ class IndexController extends Controller
 
     	$list_of_movies = $this->sort($sort_by);
 
-    	for($i=0; $i<count($list_of_movies); $i++){
-
     	$this->view->movies = $list_of_movies;
-    	}
     }
 
 	public function sort($sort_method)
