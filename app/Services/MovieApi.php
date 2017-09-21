@@ -39,22 +39,6 @@ class MovieApi
 
 
 
-		public function getmovieInfo($index)
-	{
-		ini_set("allow_url_fopen", 1);
-
-		$json = file_get_contents('https://api.themoviedb.org/3/movie/now_playing?api_key=f312ac2cb63002f508d52fd432cea28d');
-
-		$obj = json_decode($json);
-
-		return $obj->results[$index]->overview;
-	}
-
-	public function fixDate(){
-
-		
-	}
-
 
 
 }
