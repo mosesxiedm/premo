@@ -1,7 +1,7 @@
 <?php
 namespace DM\MovieApp\Services;
 
-describe(MovieApi::class, function () {
+fdescribe(MovieApi::class, function () {
 	describe("->fetchMovies", function () {
 		it("returns array of movies", function (){
 			$movie_instanceAPI = new MovieApi();

@@ -7,16 +7,15 @@ use \Phalcon\Mvc\Controller;
 
 class InfoController extends Controller
 {
-    public function infoAction()
+    public function infoAction($id)
     {
 
-    	$url = $_SERVER['REQUEST_URI'];
-    	$string_array = str_split($url);
-    	$fixed_url = "";
 
-    	for($i=6; $i<count($string_array); $i++){
+        $movie = Movie::findFirst($id);
 
-    	}
+        $this->view->title = $movie->title;
+
+        $this->view->overview = $movie->overview;
 
     }
 

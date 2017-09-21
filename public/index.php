@@ -87,6 +87,8 @@ $di->set('dispatcher',function () {
     }
 );
 
+
+
 // Create the router
 $router = $di->get('router');
 
@@ -113,7 +115,7 @@ $router->add(
 );
 
 $router->add(
-    "/info/{title}",
+    "/info/{id:[0-9]+}",
     [
         "controller" => "info",
         "action"     => "info",

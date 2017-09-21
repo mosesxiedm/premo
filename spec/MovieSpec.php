@@ -1,7 +1,7 @@
 <?php
 namespace DM\MovieApp\Model;
 
-describe(Movie::class, function () {
+xdescribe(Movie::class, function () {
 	describe("->getName", function () {
 		it("returns name", function (){
 			$movie_instance = new Movie();
