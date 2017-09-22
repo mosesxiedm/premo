@@ -11,6 +11,8 @@ use Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;
 use Phalcon\Mvc\Router;
 use Phalcon\Mvc\Dispatcher;
 
+
+
 // Register an autoloader
 $loader = new Loader();
 
@@ -20,6 +22,7 @@ $loader = new Loader();
 //         "../app/Models/",
 //     ]
 // );
+
 
 $loader->registerNamespaces(
     [
@@ -70,8 +73,10 @@ $di->set('url', function(){
     return $url;
 });
 
+
+
 // Registering a dispatcher
-$i->set('dispatcher',function () {
+$di->set('dispatcher',function () {
         $dispatcher = new Dispatcher();
 
         $dispatcher->setDefaultNamespace(
@@ -82,14 +87,16 @@ $i->set('dispatcher',function () {
     }
 );
 
+
+
 // Create the router
-$router = $di->get('router');d
+$router = $di->get('router');
 
 $router->setUriSource(
     Router::URI_SOURCE_SERVER_REQUEST_URI
 );
 
-$router->add (
+$router->add(
     "/",
     [
         "controller" => "index",
@@ -98,7 +105,7 @@ $router->add (
     ]
 );
 
-$router->add (
+$router->add(
     "/info",
     [
         "controller" => "info",
@@ -107,7 +114,7 @@ $router->add (
     ]
 );
 
-$router->add (
+$router->add(
     "/info/{id:[0-9]+}",
     [
         "controller" => "info",
@@ -115,7 +122,10 @@ $router->add (
     ]
 );
 
+
+
 $router->handle();
+
 
 $application = new Application($di);
 try {

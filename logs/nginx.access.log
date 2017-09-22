@@ -952,3 +952,6 @@
 172.19.0.1 - - [22/Sep/2017:18:33:20 +0000] "GET /?sort=rating HTTP/1.1" 200 1274 "http://premo.dev:8581/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
 172.19.0.1 - - [22/Sep/2017:18:33:21 +0000] "GET /?sort=rating HTTP/1.1" 200 1274 "http://premo.dev:8581/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
 172.19.0.1 - - [22/Sep/2017:18:33:21 +0000] "GET /?sort=rating HTTP/1.1" 200 1274 "http://premo.dev:8581/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
+172.19.0.1 - - [22/Sep/2017:18:43:57 +0000] "GET / HTTP/1.1" 200 144 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
+172.19.0.1 - - [22/Sep/2017:18:44:09 +0000] "GET / HTTP/1.1" 200 144 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
+172.19.0.1 - - [22/Sep/2017:18:44:21 +0000] "GET / HTTP/1.1" 200 1274 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
