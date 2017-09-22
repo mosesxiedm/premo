@@ -15,5 +15,4 @@ class InfoController extends Controller
 
         $this->view->overview = $movie->overview;
     }
-
 }

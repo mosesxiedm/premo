@@ -6,30 +6,30 @@ echo PHP_EOL;
 
 echo PHP_EOL;
 
-	echo $this->tag->linkTo(
-	"?sort=rating",
+echo $this->tag->linkTo(
+    "?sort=rating",
     "rating "
-    );
-
-    echo $this->tag->linkTo(
-	"?sort=alphabetical",
-    "alphabetical "
-    );
-
-    echo $this->tag->linkTo(
-	"?sort=release_data",
-    "release_date "
-    );
-
-	echo "<br/>";
-
-for($i=0; $i<count($movies); $i++){
-
-	echo $this->tag->linkTo(
-	"info/{$movies[$i]->id}",
-    $movies[$i]->title
 );
 
-	echo "<br/>";
+echo $this->tag->linkTo(
+    "?sort=alphabetical",
+    "alphabetical "
+);
+
+echo $this->tag->linkTo(
+    "?sort=release_data",
+    "release_date "
+);
+
+echo "<br/>";
+
+for($i=0; $i<count($movies); $i++) {
+
+    echo $this->tag->linkTo(
+    "info/{$movies[$i]->id}",
+    $movies[$i]->title
+    );
+
+    echo "<br/>";
 
 }
