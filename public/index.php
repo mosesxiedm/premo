@@ -23,7 +23,6 @@ $loader = new Loader();
 //     ]
 // );
 
-
 $loader->registerNamespaces(
     [
        'DM\MovieApp\Controllers' => '../app/Controllers',
@@ -73,10 +72,8 @@ $di->set('url', function(){
     return $url;
 });
 
-
-
 // Registering a dispatcher
-$di->set('dispatcher',function () {
+$i->set('dispatcher',function () {
         $dispatcher = new Dispatcher();
 
         $dispatcher->setDefaultNamespace(
@@ -87,10 +84,8 @@ $di->set('dispatcher',function () {
     }
 );
 
-
-
 // Create the router
-$router = $di->get('router');
+$router = $di->get('router');d
 
 $router->setUriSource(
     Router::URI_SOURCE_SERVER_REQUEST_URI
@@ -122,10 +117,7 @@ $router->add(
     ]
 );
 
-
-
 $router->handle();
-
 
 $application = new Application($di);
 try {
