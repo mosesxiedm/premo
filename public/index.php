@@ -11,8 +11,6 @@ use Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;
 use Phalcon\Mvc\Router;
 use Phalcon\Mvc\Dispatcher;
 
-
-
 // Register an autoloader
 $loader = new Loader();
 
@@ -91,7 +89,7 @@ $router->setUriSource(
     Router::URI_SOURCE_SERVER_REQUEST_URI
 );
 
-$router->add(
+$router->add (
     "/",
     [
         "controller" => "index",
@@ -100,7 +98,7 @@ $router->add(
     ]
 );
 
-$router->add(
+$router->add (
     "/info",
     [
         "controller" => "info",
@@ -109,7 +107,7 @@ $router->add(
     ]
 );
 
-$router->add(
+$router->add (
     "/info/{id:[0-9]+}",
     [
         "controller" => "info",
