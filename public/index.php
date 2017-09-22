@@ -67,7 +67,7 @@ $di->set(
 );
 
 //Setup a base URI so that all generated URIs include the "tutorial" folder
-$di->set('url', function(){
+$di->set('url', function() {
     $url = new \Phalcon\Mvc\Url();
     $url->setBaseUri('/');
     return $url;
@@ -96,7 +96,7 @@ $router->setUriSource(
     Router::URI_SOURCE_SERVER_REQUEST_URI
 );
 
-$router->add(
+$router->add (
     "/",
     [
         "controller" => "index",
@@ -105,7 +105,7 @@ $router->add(
     ]
 );
 
-$router->add(
+$router->add (
     "/info",
     [
         "controller" => "info",
