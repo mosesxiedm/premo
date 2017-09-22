@@ -5,38 +5,38 @@ use Phalcon\Mvc\Model;
 
 class Movie extends Model
 {
-	public $id;
-	public $title;
-	public $rating;
-	public $release_data;
-	public $overview;
+    public $id;
+    public $title;
+    public $rating;
+    public $release_data;
+    public $overview;
 
-	public function getId()
-	{
-		return $this->id;
-	}
+    public function getId()
+    {
+        return $this->id;
+    }
 
-	public function getName()
-	{
-		return $this->title;
-	}
+    public function getName()
+    {
+        return $this->title;
+    }
 
-	public function getRating()
-	{
-		return $this->rating;
-	}
+    public function getRating()
+    {
+        return $this->rating;
+    }
 
-	public function getReleaseData()
-	{
-		return $this->release_data;
-	}
+    public function getReleaseData()
+    {
+        return $this->release_data;
+    }
 
-	public function getOverview()
-	{
-		return $this->overview;
-	}
+    public function getOverview()
+    {
+        return $this->overview;
+    }
 
-	    public function initialize()
+        public function initialize()
     {
         $this->setSource("movie");
     }

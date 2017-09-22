@@ -42,8 +42,8 @@ class IndexController extends Controller
 
     public function getMoviesFromApi()
     {
-        $movieAPI = new MovieAPI();
-        return $movieAPI->fetchMovies();
+        $movie_api = new MovieAPI();
+        return $movie_api->fetchMovies();
     }
 
     public function storeMovies($list_of_movies)
