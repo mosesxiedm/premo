@@ -6,6 +6,9 @@ use DM\MovieApp\Model\Movie;
 
 class MovieApi
 {
+    const BASE_URL = 'https://api.themoviedb.org/3';
+    protected $api_key = 'f312ac2cb63002f508d52fd432cea28d';
+
     public function fetchMovies()
     {
         $list_of_movies = array();
@@ -35,4 +38,6 @@ class MovieApi
 
         return $list_of_movies;
     }
+
+
 }
