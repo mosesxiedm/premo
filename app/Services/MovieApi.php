@@ -6,8 +6,19 @@ use DM\MovieApp\Model\Movie;
 
 class MovieApi
 {
-    const BASE_URL = 'https://api.themoviedb.org/3';
+    https://api.themoviedb.org/3/discover/movie?api_key=f312ac2cb63002f508d52fd432cea28d&primary_release_date.gte=2017-09-25&language=en-US
+    const BASE_URL = 'https://api.themoviedb.org/3/discover/movie?';
     protected $api_key = 'f312ac2cb63002f508d52fd432cea28d';
+    protected $language_key = 'en-US';
+
+    public function buildDate (){
+        
+    }
+
+    public function buildURL($base, $key, $language, $time)
+    {
+        $url = BASE_URL . 'api_key=' . $key . '&language=' . $language . '&primary_release_date.gte=' .;
+    }
 
     public function fetchMovies()
     {

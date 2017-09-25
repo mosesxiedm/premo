@@ -973,3 +973,8 @@
 172.19.0.1 - - [22/Sep/2017:19:44:55 +0000] "GET /info/339403 HTTP/1.1" 200 191 "http://premo.dev:8581/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
 172.19.0.1 - - [22/Sep/2017:21:21:50 +0000] "GET / HTTP/1.1" 200 1195 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
 172.19.0.1 - - [22/Sep/2017:21:21:51 +0000] "GET /info/396422 HTTP/1.1" 200 308 "http://premo.dev:8581/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
+172.19.0.1 - - [25/Sep/2017:12:25:25 +0000] "GET / HTTP/1.1" 200 1290 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
+172.19.0.1 - - [25/Sep/2017:12:25:25 +0000] "GET /favicon.ico HTTP/1.1" 404 571 "http://premo.dev:8581/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
+172.19.0.1 - - [25/Sep/2017:12:25:28 +0000] "GET /info/78 HTTP/1.1" 200 299 "http://premo.dev:8581/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
+172.19.0.1 - - [25/Sep/2017:12:25:29 +0000] "GET / HTTP/1.1" 200 1290 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
+172.19.0.1 - - [25/Sep/2017:12:25:31 +0000] "GET /info/406990 HTTP/1.1" 200 320 "http://premo.dev:8581/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
