@@ -19,7 +19,7 @@ class IndexController extends Controller
 
         $this->view->movies = $list_of_movies;
     }
-    
+
     public function sort($sort_method)
     {
         if ($sort_method == "rating") {

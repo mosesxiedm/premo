@@ -6,7 +6,6 @@ use DM\MovieApp\Model\Movie;
 
 class MovieApi
 {
-    
     protected $base_url = 'https://api.themoviedb.org/3/discover/movie?';
     protected $api_key = 'f312ac2cb63002f508d52fd432cea28d';
     protected $language_key = 'en-US';
