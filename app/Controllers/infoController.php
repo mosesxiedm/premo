@@ -13,6 +13,8 @@ class InfoController extends Controller
 
         $this->view->title = $movie->title;
 
+        $this->view->release_date = $movie->release_data;
+
         $this->view->overview = $movie->overview;
     }
 }
