@@ -1,62 +1,72 @@
 <?php
 namespace DM\MovieApp\Services;
 
-use Phalcon\Mvc\Model;
 use DM\MovieApp\Model\Movie;
 
-class MovieApi
-{
-    protected $base_url = 'https://api.themoviedb.org/3/discover/movie?';
-    protected $api_key = 'f312ac2cb63002f508d52fd432cea28d';
-    protected $language_key = 'en-US';
+class MovieApi {
+	protected $base_url = 'https://api.themoviedb.org/3';
+	protected $api_key = 'f312ac2cb63002f508d52fd432cea28d';
+	protected $language_key = 'en-US';
 
-    public function buildDate ()
-    {
-        $tz = 'America/New_York';
-        $timestamp = time();
-        $dt = new \DateTime("now", new \DateTimeZone($tz));
-        $dt->setTimestamp($timestamp);
-        return $dt->format('Y-m-d');
-    }
+	public function buildDate() {
+		$tz = 'America/New_York';
+		$timestamp = time();
+		$dt = new \DateTime("now", new \DateTimeZone($tz));
+		$dt->setTimestamp($timestamp);
+		return $dt->format('Y-m-d');
+	}
 
-    public function buildURL()
-    {
-        $time = $this->buildDate();
-        $url = $this->base_url . 'api_key=' . $this->api_key . '&language=' . $this->language_key . '&primary_release_date.gte=' . $time;
-        return $url;
-    }
+	public function buildURL() {
+		$params = [
+			'page' => "1",
+			'primary_release_date.gte' => $this->buildDate(),
+		];
 
-    public function fetchMovies()
-    {
-        $url = $this->buildURL();
+		$default_params = [
+			'api_key' => $this->api_key,
+			'language' => "en-US",
+		];
+		$fetch_params = array_merge($default_params, $params);
+		$url = $this->base_url . '/discover/movie' . '?' . http_build_query($fetch_params);
+		var_dump($url);
+		return $url;
 
-        $list_of_movies = array();
+		/*
+			        $time = $this->buildDate();
+			        $url = $this->base_url . 'api_key=' . $this->api_key . '&language=' . $this->language_key . '&primary_release_date.gte=' . $time;
+			        return $url;
+		*/
+	}
 
-        ini_set("allow_url_fopen", 1);
+	public function fetchMovies() {
+		$url = $this->buildURL();
 
-        $json = file_get_contents($url);
+		$list_of_movies = array();
 
-        $obj = json_decode($json);
+		ini_set("allow_url_fopen", 1);
 
-        for($i=0; $i<count($obj->results); $i++) {
+		$json = file_get_contents($url);
 
-            $movie = new Movie;
+		$obj = json_decode($json);
 
-            $movie->id = $obj->results[$i]->id;
+		for ($i = 0; $i < count($obj->results); $i++) {
 
-            $movie->title = $obj->results[$i]->title;
+			$movie = new Movie;
 
-            $movie->rating = $obj->results[$i]->vote_average;
+			$movie->id = $obj->results[$i]->id;
 
-            $movie->release_data = $obj->results[$i]->release_date;
+			$movie->title = $obj->results[$i]->title;
 
-            $movie->overview = $obj->results[$i]->overview;
+			$movie->rating = $obj->results[$i]->vote_average;
 
-            $list_of_movies[] = $movie;
-        }
+			$movie->release_data = $obj->results[$i]->release_date;
 
-        return $list_of_movies;
-    }
+			$movie->overview = $obj->results[$i]->overview;
 
+			$list_of_movies[] = $movie;
+		}
+
+		return $list_of_movies;
+	}
 
 }
