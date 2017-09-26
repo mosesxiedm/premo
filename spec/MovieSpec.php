@@ -1,12 +1,12 @@
 <?php
 namespace DM\MovieApp\Model;
 
-xdescribe(Movie::class, function () {
-	describe("->getName", function () {
-		it("returns name", function (){
-			$movie_instance = new Movie();
-			$movie_instance->name = "yo";
-			expect($movie_instance->getName())->toBe("yo");
-		});
-	});
+describe(Movie::class, function () {
+    describe("->getId", function () {
+        it("returns the movie id", function () {
+            $movie_instance = new Movie();
+            $movie_instance->id = "1234";
+            expect($movie_instance->getId())->toBe("1234");
+        });
+    });
 });

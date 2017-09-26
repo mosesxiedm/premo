@@ -10,6 +10,12 @@ class Movie extends Model
     public $rating;
     public $release_data;
     public $overview;
+    public $poster_path;
+
+    public function getPosterpath()
+    {
+        return $this->poster_path;
+    }
 
     public function getId()
     {
@@ -36,9 +42,8 @@ class Movie extends Model
         return $this->overview;
     }
 
-        public function initialize()
+    public function initialize()
     {
         $this->setSource("movie");
     }
-
 }
