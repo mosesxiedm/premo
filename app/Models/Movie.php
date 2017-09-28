@@ -41,9 +41,4 @@ class Movie extends Model
     {
         return $this->overview;
     }
-
-    public function initialize()
-    {
-        $this->setSource("movie");
-    }
 }
