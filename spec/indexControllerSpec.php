@@ -7,10 +7,24 @@ use DM\MovieApp\Services\MovieAPI;
 use \Phalcon\Mvc\Controller;
 
 describe(MovieApi::class, function () {
+    beforeEach(function () {
+            $this->controller = new indexController();
+    });
+
     describe("->indexAction", function () {
-        it("calls fetch movies", function (){
-            $indexController_instance = new indexController();
-            expect(count($indexController_instance->indexAction()))->toBeGreaterThan(0);
+        it("calls getMoviesFromApi", function (){
+            expect($this->controller)
+                ->toReceive('getMoviesFromApi');
+        });
+        it("calls storeMovies", function (){
+            expect($this->controller)
+                ->toReceive('storeMovies')
+                ->with(array(1234));
+        });
+        it("calls sort", function (){
+            expect($this->controller)
+                ->toReceive('sort')
+                ->with('alphabetical');
         });
     });
 
@@ -20,10 +34,7 @@ describe(MovieApi::class, function () {
             expect(count($indexController_instance->getMoviesFromApi()))->toBeGreaterThan(2);
         });
     });
-    given('controller',function(){
-         $controller = Stub::create(['extends' => indexController::class]);
-         return $controller;
-    });
+
     given('list_of_movies', function () {
         $list_of_movies = array();
         $movie = new Movie;
@@ -33,8 +44,6 @@ describe(MovieApi::class, function () {
             });
 
     describe("->storeMovies", function(){
-        it("findFirst returns empty if it doesnt exist", function(){
-        });
         it("saves if findFirst returns empty", function(){
             expect(Movie::class)
                 ->toReceive('save');
@@ -48,3 +57,6 @@ describe(MovieApi::class, function () {
         });
     });
 });
+
+
+
