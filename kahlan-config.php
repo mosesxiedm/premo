@@ -9,6 +9,7 @@ Filter::register('api.patchers', function ($chain) {
 	$patchers->add('layer', new Layer([
 		'override' => [
 			'Phalcon\Mvc\Model', // apply a layer on top of all classes extending `Phalcon\Mvc\Model`.
+			'Phalcon\Mvc\Controller' // not working
 		],
 	]));
 

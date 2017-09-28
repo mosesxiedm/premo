@@ -3,7 +3,7 @@ namespace DM\MovieApp\Controllers;
 
 use DM\MovieApp\Model\Movie;
 use DM\MovieApp\Services\MovieAPI;
-use \Phalcon\Mvc\Controller;
+use Phalcon\Mvc\Controller;
 
 class IndexController extends Controller {
 	public function indexAction() {
