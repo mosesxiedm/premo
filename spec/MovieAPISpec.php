@@ -12,14 +12,14 @@ describe(MovieApi::class, function () {
     describe("->buildURL", function () {
         it("returns API url", function () {
             $movie_instanceAPI = new MovieApi();
-            expect($movie_instanceAPI->buildURL())->toBe("https://api.themoviedb.org/3/discover/movie?api_key=f312ac2cb63002f508d52fd432cea28d&language=en-US&page=1&primary_release_date.gte=2017-09-26");
+            expect($movie_instanceAPI->buildURL())->toBe("https://api.themoviedb.org/3/discover/movie?api_key=f312ac2cb63002f508d52fd432cea28d&language=en-US&page=1&primary_release_date.gte=2017-09-28");
         });
     });
 
     describe("->buildDate", function () {
         it("returns correct date", function(){
             $movie_instanceAPI = new MovieApi();
-            expect($movie_instanceAPI->buildDate())->toBe("2017-09-26");
+            expect($movie_instanceAPI->buildDate())->toBe("2017-09-28");
         });
     });
 
