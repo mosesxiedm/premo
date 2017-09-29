@@ -20,7 +20,7 @@ class IndexController extends Controller {
 
 	public function sort($sort_method) {
 		if ($sort_method == "rating") {
-
+			echo "asdfsdfsdfas";
 			$filtered_movies = Movie::find(["order" => "rating DESC"]);
 
 		} elseif ($sort_method == "alphabetical") {

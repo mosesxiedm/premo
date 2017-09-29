@@ -61,11 +61,15 @@ describe(indexController::class, function () {
         });
     });
 
-    fdescribe("->sort", function(){
+    describe("->sort", function(){
         it("sorts by rating", function(){
+            Stub::on(Movie::class)
+                ->method('find')
+                ->andReturn($this->list_of_movies);
             expect(Movie::class)
-                ->toReceive('find')
-                ->with('rating');
+                ->toReceive('find');
+            $this->controller->sort('rating');
+
         });
     });
 
