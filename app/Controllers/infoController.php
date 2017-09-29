@@ -17,7 +17,7 @@ class InfoController extends Controller
         $image = file_get_contents($url);
         */
 
-        $this->view->image =  $image;
+        $this->view->image =  $movie->poster_path;
 
         $this->view->title = $movie->title;
 

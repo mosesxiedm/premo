@@ -61,13 +61,10 @@ describe(indexController::class, function () {
         });
     });
 
-    describe("->sort", function(){
-        it("sorts by rating", function(){
-            Stub::on(Movie::class)
-                ->method('find')
-                ->andReturn($this->list_of_movies);
+    xdescribe("->sort", function() {
+        it("sorts by rating", function() {
             expect(Movie::class)
-                ->toReceive('find');
+                ->toReceive('::find');
             $this->controller->sort('rating');
 
         });
@@ -80,7 +77,7 @@ describe(indexController::class, function () {
         });
     });
 
-    describe("->storeMovies", function(){
+    xdescribe("->storeMovies", function(){
         it("saves if findFirst returns empty", function(){
             Stub::on($this->controller)
                 ->method('::getMoviesFromApi')

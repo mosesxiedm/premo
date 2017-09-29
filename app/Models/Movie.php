@@ -41,4 +41,9 @@ class Movie extends Model
     {
         return $this->overview;
     }
+
+    public static function find($parameters = null)
+    {
+        return parent::find($parameters);
+    }
 }

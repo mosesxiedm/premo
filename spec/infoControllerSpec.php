@@ -8,12 +8,10 @@ use Phalcon\Mvc\Controller;
 
 describe(infoController::class, function () {
 
-    given('list_of_movies', function () {
-        $list_of_movies = array();
+    given('movie', function () {
         $movie = new Movie;
         $movie->id = 141052;
-        $list_of_movies[] = $movie;
-        return $list_of_movies;
+        return $movie;
     });
 
     beforeEach(function () {
@@ -26,7 +24,7 @@ describe(infoController::class, function () {
 
     describe('->indexAction', function(){
         it('findFirst returns the movie with correct id', function(){
-
+            expect(Movie::findFirst($this->movie->id))toBe($this->movie->id);
         });
     });
 
