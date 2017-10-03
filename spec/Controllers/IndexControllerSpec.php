@@ -17,12 +17,11 @@ describe(indexController::class, function () {
     });
 
     beforeEach(function () {
-    //     $this->controller = Stub::create([
-    //         'layer' => true,
-    //         'extends' => IndexController::class
-        // ]);
-        $this->controller = new IndexController;
-        $this->controller->request = Stub::create();
+        $this->controller = Stub::create([
+            'layer' => true,
+            'extends' => IndexController::class
+         ]);
+
     });
 
     describe("->indexAction", function () {
