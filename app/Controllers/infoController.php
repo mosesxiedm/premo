@@ -8,7 +8,7 @@ class InfoController extends Controller
 {
     public function infoAction($id)
     {
-        $movie = Movie::findFirst($id);
+        $movie = $this->getMovie($id);
 
         $this->view->image =  $movie->poster_path;
 
@@ -18,5 +18,12 @@ class InfoController extends Controller
 
         $this->view->overview = $movie->overview;
 
+    }
+
+    protected function getMovie($id){
+
+        $movie = Movie::findFirst($id);
+
+        return $movie;
     }
 }
